@@ -40,7 +40,7 @@ object Api: Repository() {
                     endYaer == 0 -> {
                         return@filter time[1].toInt() in quarter..endQuarter && time[0].toInt() >= year
                     }
-                    endYaer > 0 -> {
+                    endYaer > 0 && endYaer >= year -> {
                         return@filter time[1].toInt() in quarter..endQuarter && time[0].toInt() in year..endYaer
                     }
                     else -> {
